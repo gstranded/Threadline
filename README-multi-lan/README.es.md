@@ -46,6 +46,18 @@ Memory Graph muestra sesiones guardadas y pendientes, filtros por proveedor, acc
 
 ## Instalación
 
+### Chrome Web Store
+
+Instala la extensión publicada desde Chrome Web Store:
+
+[Instalar Threadline](https://chromewebstore.google.com/detail/ielloajfhojffpfkjbjfbfgmnlbhhkhi?utm_source=item-share-cb)
+
+Después de instalarla, fija Threadline si quieres acceso rápido y recarga las pestañas de IA compatibles.
+
+Antes de cambiar la fuente de instalación, reinstalar o pasar entre una build unpacked y la versión de la tienda, exporta primero una copia de seguridad de Threadline. Los datos de extensiones están aislados por extension ID.
+
+### Compilar localmente
+
 Requisitos:
 
 - Node.js 18 o superior
@@ -59,14 +71,12 @@ pnpm install
 pnpm build
 ```
 
-Cargar la extensión:
+Cargar la extensión unpacked:
 
 1. Abre `chrome://extensions/`.
 2. Activa **Developer mode**.
 3. Haz clic en **Load unpacked**.
 4. Selecciona `build/chrome-mv3-prod`.
-
-Antes de cambiar la fuente de instalación, reinstalar o pasar entre una versión unpacked y una versión de la tienda del navegador, exporta primero una copia de seguridad de Threadline. Los datos de las extensiones del navegador están aislados por extension ID: los datos de IndexedDB y `chrome.storage.local` guardados bajo un extension ID no se pueden leer automáticamente desde otro extension ID.
 
 Desarrollo:
 

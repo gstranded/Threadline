@@ -46,6 +46,18 @@ Memory Graph zeigt gespeicherte und ausstehende Sessions, Provider-Filter, Sessi
 
 ## Installation
 
+### Chrome Web Store
+
+Installiere die veröffentlichte Erweiterung aus dem Chrome Web Store:
+
+[Threadline installieren](https://chromewebstore.google.com/detail/ielloajfhojffpfkjbjfbfgmnlbhhkhi?utm_source=item-share-cb)
+
+Nach der Installation kannst du Threadline für schnellen Zugriff anheften und unterstützte KI-Tabs einmal neu laden.
+
+Bevor du die Installationsquelle wechselst, neu installierst oder zwischen einer unpacked Build und der Store-Version wechselst, exportiere zuerst ein Threadline-Backup. Erweiterungsdaten sind nach extension ID isoliert.
+
+### Lokal bauen
+
 Voraussetzungen:
 
 - Node.js 18 oder neuer
@@ -59,14 +71,12 @@ pnpm install
 pnpm build
 ```
 
-Erweiterung laden:
+Unpacked-Erweiterung laden:
 
 1. Öffne `chrome://extensions/`.
 2. Aktiviere **Developer mode**.
 3. Klicke auf **Load unpacked**.
 4. Wähle `build/chrome-mv3-prod`.
-
-Bevor du die Installationsquelle wechselst, neu installierst oder zwischen einem unpacked build und einer Browser-Store-Version wechselst, exportiere zuerst ein Threadline-Backup. Browser-Erweiterungsdaten sind nach extension ID isoliert: IndexedDB- und `chrome.storage.local`-Daten, die unter einer extension ID gespeichert wurden, können von einer anderen extension ID nicht automatisch gelesen werden.
 
 Entwicklung:
 

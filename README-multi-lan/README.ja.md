@@ -46,6 +46,18 @@ Memory Graph では保存済み・pending の session、provider filter、sessio
 
 ## Installation
 
+### Chrome Web Store
+
+Published extension can be installed from the Chrome Web Store:
+
+[Install Threadline](https://chromewebstore.google.com/detail/ielloajfhojffpfkjbjfbfgmnlbhhkhi?utm_source=item-share-cb)
+
+After installation, pin Threadline if you want quick access and refresh supported AI tabs once.
+
+Before changing installation source, reinstalling, or moving between an unpacked build and a browser store build, export a Threadline backup first. Browser extension data is isolated by extension ID.
+
+### Build Locally
+
 Requirements:
 
 - Node.js 18+
@@ -59,7 +71,7 @@ pnpm install
 pnpm build
 ```
 
-Load the extension:
+Load the unpacked extension:
 
 1. `chrome://extensions/` を開きます。
 2. **Developer mode** を有効にします。

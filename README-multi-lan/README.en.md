@@ -46,6 +46,18 @@ Memory Graph shows saved and pending sessions, filters, session actions, zoom co
 
 ## Installation
 
+### Chrome Web Store
+
+Install the published extension from the Chrome Web Store:
+
+[Install Threadline](https://chromewebstore.google.com/detail/ielloajfhojffpfkjbjfbfgmnlbhhkhi?utm_source=item-share-cb)
+
+After installation, pin Threadline if you want quick access and refresh supported AI tabs once.
+
+Before changing installation source, reinstalling, or moving between an unpacked build and a browser store build, export a Threadline backup first. Browser extension data is isolated by extension ID, so data saved under one extension ID cannot be read automatically by another extension ID.
+
+### Build Locally
+
 Requirements:
 
 - Node.js 18 or newer
@@ -59,14 +71,12 @@ pnpm install
 pnpm build
 ```
 
-Load the extension:
+Load the unpacked extension:
 
 1. Open `chrome://extensions/`.
 2. Enable **Developer mode**.
 3. Click **Load unpacked**.
 4. Select `build/chrome-mv3-prod`.
-
-Before changing installation source, reinstalling, or moving between an unpacked build and a browser store build, export a Threadline backup first. Browser extension data is isolated by extension ID, so data saved under one extension ID cannot be read automatically by another extension ID.
 
 For development:
 

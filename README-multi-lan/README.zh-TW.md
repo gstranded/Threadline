@@ -46,6 +46,18 @@ Memory Graph 會以獨立標籤頁展示已保存和待保存的會話，並提�
 
 ## 安裝
 
+### Chrome Web Store
+
+推薦從 Chrome Web Store 安裝已發布版本：
+
+[安裝 Threadline](https://chromewebstore.google.com/detail/ielloajfhojffpfkjbjfbfgmnlbhhkhi?utm_source=item-share-cb)
+
+安裝後可以把 Threadline 固定到瀏覽器擴充功能列，並重新整理已開啟的 AI 網站分頁。
+
+在更換安裝來源、重新安裝，或在未封裝版本和瀏覽器商店版本之間切換前，請先匯出 Threadline 備份。瀏覽器擴充功能資料按 extension ID 隔離：保存在一個 extension ID 下的 IndexedDB 和 `chrome.storage.local` 資料，不能被另一個 extension ID 自動讀取。
+
+### 本地構建
+
 要求：
 
 - Node.js 18 或更高版本
@@ -59,14 +71,12 @@ pnpm install
 pnpm build
 ```
 
-載入擴充功能：
+載入未封裝擴充功能：
 
 1. 打開 `chrome://extensions/`。
 2. 開啟 **開發人員模式**。
 3. 點擊 **載入未封裝項目**。
 4. 選擇 `build/chrome-mv3-prod`。
-
-在更換安裝來源、重新安裝，或在未封裝版本和瀏覽器商店版本之間切換前，請先匯出 Threadline 備份。瀏覽器擴充功能資料會依 extension ID 隔離：儲存在某個 extension ID 下的 IndexedDB 和 `chrome.storage.local` 資料，不能被另一個 extension ID 自動讀取。
 
 開發模式：
 

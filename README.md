@@ -7,6 +7,7 @@
 **A local-first browser extension for saving, searching, and visualizing AI chat history.**
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-4285F4.svg)](https://chromewebstore.google.com/detail/ielloajfhojffpfkjbjfbfgmnlbhhkhi?utm_source=item-share-cb)
 [![Manifest V3](https://img.shields.io/badge/Chrome-Manifest%20V3-green.svg)](https://developer.chrome.com/docs/extensions/mv3/)
 [![Built with Plasmo](https://img.shields.io/badge/Built%20with-Plasmo-6E56CF.svg)](https://docs.plasmo.com)
 [![Local First](https://img.shields.io/badge/Data-local%20IndexedDB-0A84FF.svg)](#privacy--security)
@@ -41,7 +42,7 @@ Memory Graph opens as a full tab for browsing saved and pending sessions. It sho
 
 ## Status
 
-Threadline is an unpacked Chrome/Chromium extension for local use and active development. It is distributed from this repository for now.
+Threadline is available on the [Chrome Web Store](https://chromewebstore.google.com/detail/ielloajfhojffpfkjbjfbfgmnlbhhkhi?utm_source=item-share-cb). This repository contains the source code, documentation, and local development workflow.
 
 Supported providers:
 
@@ -70,7 +71,22 @@ Threadline keeps the local-first memory foundation from the upstream project and
 
 ## Installation
 
+### Install from Chrome Web Store
+
+The recommended installation path is the published Chrome Web Store listing:
+
+[Install Threadline from the Chrome Web Store](https://chromewebstore.google.com/detail/ielloajfhojffpfkjbjfbfgmnlbhhkhi?utm_source=item-share-cb)
+
+1. Open the store listing.
+2. Click **Add to Chrome**.
+3. Pin Threadline from the browser extension menu if you want quick access.
+4. Open or refresh supported AI tabs so the content scripts are active.
+
+Before changing installation source, reinstalling, or moving between an unpacked build and the Chrome Web Store build, export a Threadline backup first. Browser extension data is isolated by extension ID: IndexedDB and `chrome.storage.local` data saved under one extension ID cannot be read automatically by another extension ID, even when the visible app name is still Threadline.
+
 ### Build Locally
+
+Use this path for development, local testing, or manual inspection of the extension source.
 
 Requirements:
 
@@ -100,8 +116,6 @@ build/chrome-mv3-prod
 5. Pin Threadline from the browser extension menu if you want quick access.
 
 After any code change, run `pnpm build`, click **Reload** on the Threadline extension card, and refresh open AI tabs.
-
-Before changing installation source, reinstalling, or moving between an unpacked build and a browser store build, export a Threadline backup first. Browser extension data is isolated by extension ID: IndexedDB and `chrome.storage.local` data saved under one extension ID cannot be read automatically by another extension ID, even when the visible app name is still Threadline.
 
 ### Development Mode
 
