@@ -3,19 +3,12 @@ import type { FavoritePrompt, PromptFolder } from '../../types/memory'
 import { useTranslation } from '../../i18n/LanguageContext'
 import { useTheme } from '../../i18n/ThemeContext'
 import { getThemeTokens } from '../../ui/theme'
+import { ChevronLeftIcon } from '../../ui/icons'
 import {
   PROMPTS_STORAGE_KEY as PROMPTS_KEY,
   FOLDERS_STORAGE_KEY as FOLDERS_KEY,
   PROMPT_DRAG_TYPE as DRAG_TYPE,
 } from '../../constants/prompts'
-
-// ── SVG Icons ──────────────────────────────────────────────────────────────────
-
-const ChevronLeftIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="15 18 9 12 15 6"/>
-  </svg>
-)
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
@@ -289,6 +282,8 @@ export function FolderView({ onBack, width }: FolderViewProps) {
               color: tk.text,
             }}
             onClick={onBack}
+            aria-label={t.back}
+            title={t.back}
           >
             <ChevronLeftIcon />
           </button>

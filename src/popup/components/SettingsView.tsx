@@ -146,6 +146,8 @@ export function SettingsView({ onBack, onAllDeleted }: SettingsViewProps) {
         <button
           type="button"
           onClick={onBack}
+          aria-label={t.back}
+          title={t.back}
           style={{ ...S.iconBtn, backgroundColor: tk.btnBg, borderColor: tk.border, color: tk.text }}
         >
           <ChevronLeftIcon />
@@ -246,6 +248,8 @@ export function SettingsView({ onBack, onAllDeleted }: SettingsViewProps) {
             <button
               type="button"
               onClick={() => { setDeleteStatus(null); setConfirming(true) }}
+              aria-label={t.deleteAllMemory}
+              title={t.deleteAllMemory}
               style={{ ...S.iconBtn, borderRadius: 8, backgroundColor: 'transparent', borderColor: tk.errorText, color: tk.errorText }}
             >
               <TrashIcon />

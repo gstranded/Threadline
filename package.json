@@ -14,8 +14,8 @@
   },
   "scripts": {
     "dev": "plasmo dev",
-    "build": "plasmo build",
-    "build:prod": "plasmo build --target=chrome-mv3-prod",
+    "build": "plasmo build && node scripts/verify-build.mjs",
+    "build:prod": "plasmo build --target=chrome-mv3-prod && node scripts/verify-build.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:integration": "vitest run --config vitest.integration.config.ts",
@@ -73,7 +73,8 @@
       "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
     },
     "action": {
-      "default_title": "Threadline"
+      "default_title": "Threadline",
+      "default_popup": "popup.html"
     },
     "web_accessible_resources": [
       {

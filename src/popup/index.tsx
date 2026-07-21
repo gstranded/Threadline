@@ -87,6 +87,8 @@ function App() {
   // Slot order: settings(0) | main(1) | detail(2)
   // Settings slides in from the left, detail slides in from the right — no cross-over.
   const slideIndex = view === 'settings' ? 0 : view === 'main' ? 1 : 2
+  const inactiveViewProps = (isActive: boolean) =>
+    isActive ? {} : { 'aria-hidden': true as const, inert: '' }
 
   return (
     <div
@@ -107,12 +109,18 @@ function App() {
         }}
       >
         {/* Slot 0: Settings (slides in from left) */}
-        <div style={{ width: POPUP_WIDTH, flexShrink: 0, opacity: view === 'settings' ? 1 : 0, transition: 'opacity 0.24s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease' }}>
+        <div
+          {...inactiveViewProps(view === 'settings')}
+          style={{ width: POPUP_WIDTH, flexShrink: 0, opacity: view === 'settings' ? 1 : 0, transition: 'opacity 0.24s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease' }}
+        >
           <SettingsView onBack={goBack} />
         </div>
 
         {/* Slot 1: Main menu (center) */}
-        <div style={{ width: POPUP_WIDTH, flexShrink: 0, opacity: view === 'main' ? 1 : 0, transition: 'opacity 0.24s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease' }}>
+        <div
+          {...inactiveViewProps(view === 'main')}
+          style={{ width: POPUP_WIDTH, flexShrink: 0, opacity: view === 'main' ? 1 : 0, transition: 'opacity 0.24s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease' }}
+        >
           <div style={{ ...S.viewContainer, backgroundColor: tk.bg, color: tk.text }}>
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -166,7 +174,10 @@ function App() {
         </div>
 
         {/* Slot 2: Detail view */}
-        <div style={{ width: POPUP_WIDTH, flexShrink: 0, position: 'relative', opacity: view === 'folder' ? 1 : 0, transition: 'opacity 0.24s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease' }}>
+        <div
+          {...inactiveViewProps(view === 'folder')}
+          style={{ width: POPUP_WIDTH, flexShrink: 0, position: 'relative', opacity: view === 'folder' ? 1 : 0, transition: 'opacity 0.24s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease' }}
+        >
           <FolderView onBack={goBack} width={POPUP_WIDTH} />
         </div>
       </div>
